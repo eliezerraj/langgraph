@@ -1,3 +1,44 @@
+# use langgraph to build a simple workflow with LLM calls
+"""
+start: add 4 to 4 and show the result in a sentence
+node_step1
+ask_llm: add 4 to 4 and show the result in a sentence
+mode_step2
++-----------+
+| __start__ |
++-----------+
+       *
+       *
+       *
+  +-------+
+  | start |
+  +-------+
+       *
+       *
+       *
++------------+
+| node_step1 |
++------------+
+       *
+       *
+       *
++------------+
+| mode_step2 |
++------------+
+       *
+       *
+       *
+  +---------+
+  | __end__ |
+  +---------+
+Final State:
+{
+    'user_input': 'add 4 to 4 and show the result in a sentence',
+    'steps': ['start', 'step1', 'step2'],
+    'llm_response': 'When you add 4 to 4, the result is 8. So, the sentence would be: "The sum of 4 and 4 is 8."'
+}
+"""
+
 import boto3
 from dotenv import load_dotenv
 from typing import List, TypedDict

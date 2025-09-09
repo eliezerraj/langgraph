@@ -3,3 +3,5 @@ rich
 grandalf
 boto3
 dotenv
+langchain
+langchain_aws
