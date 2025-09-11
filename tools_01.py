@@ -1,3 +1,10 @@
+# tools 
+# get_weather
+# save_note
+# add_numbers
+# multiply_numbers
+# query_database
+
 import json
 import os
 import pathlib
@@ -90,7 +97,6 @@ result2 = agent2.invoke({
 print(result2['messages'][-1].content)
 print()
 
-
 # ############### Example 4: Math Tools - Chained calculations showing tool interoperability ###############
 @tool
 def add_numbers(a: float, b: float) -> float:
@@ -126,6 +132,7 @@ result6 = agent4.invoke({
 print(result6['messages'][-1].content)
 print()
 
+# ############### Example 5: query_database ###############
 @tool
 def query_database(sql_query: str) -> str:
     """Execute a SQL query on the company database and return the results as JSON.
